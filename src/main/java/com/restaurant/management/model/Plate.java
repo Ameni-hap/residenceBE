@@ -24,13 +24,15 @@ public class Plate {
 	@Column  
 	private int idPlate;  
 	@Column  
-	private String name;  
+	private String namePlate;  
 	@Column  
 	private String price;  
 	@Column  
 	private String  description;
 	
-	
+	@ManyToOne(optional=false)
+	@JoinColumn(name="idrestaurant", referencedColumnName="id")
+	private Restaurant restaurant;
 	
 	public int getIdPlate() {
 		return idPlate;
@@ -38,11 +40,12 @@ public class Plate {
 	public void setIdPlate(int idPlate) {
 		this.idPlate = idPlate;
 	}
-	public String getName() {
-		return name;
+
+	public String getNamePlate() {
+		return namePlate;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setNamePlate(String namePlate) {
+		this.namePlate = namePlate;
 	}
 	public String getPrice() {
 		return price;
@@ -56,13 +59,21 @@ public class Plate {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	
+	public Restaurant getRestaurant() {
+		return restaurant;
+	}
+	public void setRestaurant(Restaurant restaurant) {
+		this.restaurant = restaurant;
+	}
 	@Override
 	public String toString() {
-		return "Plate [idPlate=" + idPlate + ", name=" + name + ", price=" + price + ", description=" + description
-				+ ", getIdPlate()=" + getIdPlate() + ", getName()=" + getName() + ", getPrice()=" + getPrice()
-				+ ", getDescription()=" + getDescription() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
-				+ ", toString()=" + super.toString() + "]";
+		return "Plate [idPlate=" + idPlate + ", namePlate=" + namePlate + ", price=" + price + ", description="
+				+ description + ", restaurant=" + restaurant + "]";
 	}
+
+
 	
 	
 

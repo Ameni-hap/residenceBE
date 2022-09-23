@@ -33,9 +33,9 @@ public class Restaurant {
    @JoinColumn(name = "kf_plate")
    private Plate plate;*/
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	/*@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "fk_rest_id", referencedColumnName="id")
-	private List<Plate> plates;
+	private List<Plate> plates;*/
    
 	public int getId() {
 		return id;
